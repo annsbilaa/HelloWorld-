@@ -30,6 +30,14 @@
             android:name="com.example.helloworld.activities.BeritaUtama" />
         <activity
             android:name="com.example.helloworld.activities.Olahraga" />
+        <activity
+            android:name="com.example.helloworld.activities.Teknologi" />
+        <activity
+            android:name="com.example.helloworld.activities.Bisnis" />
+        <activity
+            android:name="com.example.helloworld.activities.Kesehatan" />
+        <activity
+            android:name="com.example.helloworld.activities.Hiburan" />
     </application>
 
 </manifest>
