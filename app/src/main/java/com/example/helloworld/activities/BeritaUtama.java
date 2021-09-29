@@ -20,7 +20,7 @@ public class BeritaUtama extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_beritautama);
+        setContentView(R.layout.activity_berita);
 
         webView = (WebView) findViewById(R.id.webView);
         webView.setWebViewClient(new myWebclient());
