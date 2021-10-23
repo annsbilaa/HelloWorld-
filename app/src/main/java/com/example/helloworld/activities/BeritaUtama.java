@@ -25,7 +25,7 @@ public class BeritaUtama extends AppCompatActivity{
         webView = (WebView) findViewById(R.id.webView);
         webView.setWebViewClient(new myWebclient());
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("https://www.detik.com/terpopuler/news");
+        webView.loadUrl("https://hot.detik.com/?tag_from=wp_firstnav_detikHot&_ga=2.220164249.145413977.1635003706-1954765882.1635003706");
         webView.getSettings().setDomStorageEnabled(true);
     }
 
