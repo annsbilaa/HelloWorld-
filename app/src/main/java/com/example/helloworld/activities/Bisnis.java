@@ -24,7 +24,7 @@ public class Bisnis extends AppCompatActivity{
         webView = (WebView) findViewById(R.id.webView);
         webView.setWebViewClient(new Bisnis.myWebclient());
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("https://www.bisnis.com/");
+        webView.loadUrl("https://www.jenius.com/");
         webView.getSettings().setDomStorageEnabled(true);
     }
 
