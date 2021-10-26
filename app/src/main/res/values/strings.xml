@@ -1,4 +1,56 @@
 <resources>
     <string name="app_name">Jangs Web Berita</string>
     <string name="title_header_main">Web\nBerita</string>
+
+    <string name="title_placeholder">Title</string>
+    <string name="news_placeholder">News</string>
+    <string name="berita_info_placeholder">Here is some news</string>
+    <string name="detail_placeholder"> Here is some detail </string>
+
+    <string-array name="berita_titles">
+        <item>KPK Geledah Kamar Tahanan Bupati Kuansing Buntut Viral Postingan di Medsos</item>
+
+    </string-array>
+
+    <string-array name="berita_info">
+        <item>Pekanbaru - KPK menggeledah isi kamar tahanan yang dihuni oleh Bupati Kuantan Singingi, Andi Putra.</item>
+
+    </string-array>
+
+
+    <array name="berita_images">
+        <item>@drawable/img_kpk</item>
+
+
+    </array>
+
+    <array name="berita_detail">
+        <item>Pekanbaru - KPK menggeledah isi kamar tahanan yang dihuni oleh Bupati Kuantan Singingi, Andi Putra. Penggeledahan oleh KPK dilakukan setelah viralnya postingan di media sosial.
+            Di sebuah akun facebook atas nama Andi Putra Kuansing tertulis postingan terkait Andi Putra yang ditangkap KPK. Di akun tersebut, ditulis tentang pertemuan hangat antara Plt Bupati Suhardiman Amby, politisi dan pihak perusahaan swasta.
+            Selain membahas pertemuan Suhardiman Amby dan pihak perusahaan, ada pula soal tanggapan Andi Putra yang kini ditahan 20 hari oleh KPK. Akun tersebut mengatakan KPK hanya mengada-ada terkait masalah hukum Andi Putra.
+            "Saya pribadi mohon maaf telah mengecewakan masyarakat Kuansing. Mohon doa dan suportnya agar bisa kembali ke Kuansing, semoga cuma 20 hari dan KPK hanya mengada-ada tidak punya bukti," tulis akun tersebut yang diposting pada Sabtu (24/10/2021).
+            \n
+            \n
+            \n
+            Terakhir, dalam postingan itu disebutkan Andi Putra ingin bebas agar bisa bercerita kepada masyarakat siapa penghianat di kasus tersebut.
+
+            Menanggapi informasi yang beredar tentang postingan di akun media sosial Andi Putra, KPK langsung bergerak cepat. Salah satunya melakukan penggeledahan di rutan KPK yang dihuni Andi Putra.
+
+            "Petugas Rutan KPK telah langsung melakukan penggeledahan di kamar tahanan dimaksud dan tidak menemukan peralatan komunikasi apapun," kata Plt Juru Bicara KPK, Ali Fikri.
+
+            Tak hanya itu, Andi Putra bahkan membuat surat pernyataan. Isinya, yakni ia memastikan tidak menulis pesan status di akun tersebut.
+
+            \n
+            \n
+            \n
+
+            "Tersangka AP juga menyatakan dalam surat pernyataannya bahwa dirinya bukan yang menulis pesan status dalam medsos dimaksud. KPK pastikan seluruh tahanan dilarang membawa atau menggunakan peralatan elektronik termasuk alat komunikasi ke dalam Rutan sebagaimana diatur PermenkumHAM RI Nomor 6 Tahun 2013," katanya.
+
+            Selain itu, Rutan KPK juga dijaga ketat oleh petugas 1x24 jam. Termasuk juga dipantau melalui berbagai kamera pengawas.
+
+            "KPK memeriksa secara detil dan berlapis kepada setiap tahanan yang akan masuk ke Rutan KPK. Oleh karena itu, terkait adanya postingan di akun media sosial tahanan KPK tersebut, bisa dimungkinan hal itu dilakukan oleh orang lain," katanya.
+        </item>
+
+
+    </array>
 </resources>

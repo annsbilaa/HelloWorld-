@@ -27,7 +27,10 @@
             android:name="com.example.helloworld.activities.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.helloworld.activities.BeritaUtama" />
+            android:name="com.example.helloworld.activities.BeritaUtama"
+            android:exported="true" />
+        <activity android:name="com.example.helloworld.activities.DetailBerita"
+            android:exported="true"/>
         <activity
             android:name="com.example.helloworld.activities.Olahraga" />
         <activity
