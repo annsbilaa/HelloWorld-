@@ -1,4 +1,131 @@
 <resources>
     <string name="app_name">Jangs Web Berita</string>
     <string name="title_header_main">Web\nBerita</string>
+
+    <string name="title_placeholder">Title</string>
+    <string name="news_placeholder">News</string>
+    <string name="berita_info_placeholder">Here is some news</string>
+    <string name="detail_placeholder"> Here is some detail </string>
+
+    <string-array name="berita_titles">
+        <item>KPK Geledah Kamar Tahanan Bupati Kuansing Buntut Viral Postingan di Medsos</item>
+        <item>Indonesia Tanpa Gelar di Denmark Open 2021, Ini Evaluasi PBSI</item>
+        <item>Dapat Keistimewaan sebagai Tuan Rumah, Timnas Basket Indonesia Tampil di FIBA Asia Cup 2021 Tanpa Lalui Playoff</item>
+        <item>Raih Juara Umum SEA Games 2019, Tim Bowling Indonesia Melampaui Target</item>
+    </string-array>
+
+    <string-array name="berita_info">
+        <item>Pekanbaru - KPK menggeledah isi kamar tahanan yang dihuni oleh Bupati Kuantan Singingi, Andi Putra.</item>
+        <item>Indonesia gagal mengirimkan wakil ke final Denmark Open 2021 setelah Praveen Jordan/Melati Daeva Oktavianti dan Tommy Sugiarto kandas di semifinal, Sabtu (24/10/2021).</item>
+        <item>Timnas Basket Indonesia dipastikan mengikuti FIBA Asia Cup 2021 tanpa terlebih dahulu mengikuti playoff. </item>
+        <item>Tim bowling Indonesia merebut gelar juara umum SEA Games 2019 yang berakhir di Starmall EDSA Mandaluyong, Filipina, Minggu (8/12/2019).</item>
+    </string-array>
+
+
+    <array name="berita_images">
+        <item>@drawable/img_kpk</item>
+        <item>@drawable/badminton</item>
+        <item>@drawable/basket</item>
+        <item>@drawable/bowling</item>
+
+    </array>
+
+    <array name="berita_detail">
+        <item>Pekanbaru - KPK menggeledah isi kamar tahanan yang dihuni oleh Bupati Kuantan Singingi, Andi Putra. Penggeledahan oleh KPK dilakukan setelah viralnya postingan di media sosial.
+            Di sebuah akun facebook atas nama Andi Putra Kuansing tertulis postingan terkait Andi Putra yang ditangkap KPK. Di akun tersebut, ditulis tentang pertemuan hangat antara Plt Bupati Suhardiman Amby, politisi dan pihak perusahaan swasta.
+            Selain membahas pertemuan Suhardiman Amby dan pihak perusahaan, ada pula soal tanggapan Andi Putra yang kini ditahan 20 hari oleh KPK. Akun tersebut mengatakan KPK hanya mengada-ada terkait masalah hukum Andi Putra.
+            "Saya pribadi mohon maaf telah mengecewakan masyarakat Kuansing. Mohon doa dan suportnya agar bisa kembali ke Kuansing, semoga cuma 20 hari dan KPK hanya mengada-ada tidak punya bukti," tulis akun tersebut yang diposting pada Sabtu (24/10/2021).
+            \n
+            \n
+            \n
+            Terakhir, dalam postingan itu disebutkan Andi Putra ingin bebas agar bisa bercerita kepada masyarakat siapa penghianat di kasus tersebut.
+
+            Menanggapi informasi yang beredar tentang postingan di akun media sosial Andi Putra, KPK langsung bergerak cepat. Salah satunya melakukan penggeledahan di rutan KPK yang dihuni Andi Putra.
+
+            "Petugas Rutan KPK telah langsung melakukan penggeledahan di kamar tahanan dimaksud dan tidak menemukan peralatan komunikasi apapun," kata Plt Juru Bicara KPK, Ali Fikri.
+
+            Tak hanya itu, Andi Putra bahkan membuat surat pernyataan. Isinya, yakni ia memastikan tidak menulis pesan status di akun tersebut.
+
+            \n
+            \n
+            \n
+
+            "Tersangka AP juga menyatakan dalam surat pernyataannya bahwa dirinya bukan yang menulis pesan status dalam medsos dimaksud. KPK pastikan seluruh tahanan dilarang membawa atau menggunakan peralatan elektronik termasuk alat komunikasi ke dalam Rutan sebagaimana diatur PermenkumHAM RI Nomor 6 Tahun 2013," katanya.
+
+            Selain itu, Rutan KPK juga dijaga ketat oleh petugas 1x24 jam. Termasuk juga dipantau melalui berbagai kamera pengawas.
+
+            "KPK memeriksa secara detil dan berlapis kepada setiap tahanan yang akan masuk ke Rutan KPK. Oleh karena itu, terkait adanya postingan di akun media sosial tahanan KPK tersebut, bisa dimungkinan hal itu dilakukan oleh orang lain," katanya.
+        </item>
+
+        <item>
+            Indonesia gagal mengirimkan wakil ke final Denmark Open 2021 setelah Praveen Jordan/Melati Daeva Oktavianti dan Tommy Sugiarto kandas di semifinal, Sabtu (24/10/2021). Faktor kelelahan dan cedera diklaim menjadi biang Indonesia gagal meraih gelar di turnamen ini.
+            \n
+            \n
+            \n
+            Sebelum Praveen/Melati dan Tommy, beberapa pemain lain berguguran di babak-babak sebelumnya. Bahkan, Mohammad Ahsan/Hendra Setiawan kandas di babak pertama Denmark Open 2021, sedangkan Kevin Sanjaya Sukamuljo/Marcus Fernaldi Gideon tersingkir di babak kedua.
+            \n
+            \n
+            \n
+            Pemain lain seperti Jonatan Christie, Gregoria Mariska Tunjung, Greysia Polli/Apriyani Rahayu, Fajar Alfian/Muhammad Rian Ardianto juga satu-persatu tersingkir.  Bahkan Anthony Sinisuka Ginting terpaksa mundur karena cedera pinggang.
+            \n
+            \n
+            \n
+            Apa penyebab wakil-wakil Indonesia tak bisa melangkah jauh dan gagal tampil di final, apalagi memboyong gelar?
+            \n
+            \n
+            \n
+            "Para pemain yang selepas tampil di Piala Sudirman di Finlandia dan Piala Thomas dan Uber di Denmark, banyak yang mengalami kelelahan, sehingga permainannya tidak bisa tampil maksimal di turnamen Denmark Open 2021," kata tim manajer Indonesia di Denmark Open 2021, Aryono Miranat, melalui rilis dari PBSI.
+            \n
+            \n
+            \n
+            "Tenaga dan stamina mereka tidak cukup untuk kembali tampil maksimal di Denmark Open 2021 yang juga melibatkan pemain top dunia," imbuh Aryono.
+        </item>
+
+        <item>
+            Timnas Basket Indonesia dipastikan mengikuti FIBA Asia Cup 2021 tanpa terlebih dahulu mengikuti playoff. Indonesia dibebaskan dari babak playoff karena statusnya sebagai tuan rumah kejuaraan basket tingkat Asia tersebut.
+            \n
+            \n
+            \n
+            Hal di atas telah dikonfirmasi oleh Manajer Timnas Basket Indonesia Maulana Fahreza Tamrella setelah mendapat informasi langsung dari FIBA.
+            \n
+            \n
+            \n
+            Meski dibebaskan dari playoff ajang FIBA Asia Cup 2021 yang rencananya digelar 12-14 Agustus mendatang, para Arjuna Indonesia tetap akan memeras keringat.
+            \n
+            \n
+            \n
+            Mereka akan gelar uji coba sebelum playoff mulai. Untuk lawan yang akan diajak sparring partner adalah lima negara peserta playoff yang bersedia diajak beruji coba.
+            \n
+            \n
+            \n
+            "Diharapkan timnas bisa uji tanding dengan negara-negara peserta playoff sebelum mereka bertanding di playoff," terang Mocha, sapaan karib Maulana Fakreza Tamrella melalui keterangan pers yang diterima Bola.com, Sabtu (10/07/2021).
+            \n
+            \n
+            \n
+            "Di antara lima negara peserta playoff mana saja yang memungkinkan untuk hadir di Jakarta lebih dahulu dan ini subject to FIBA approval (persetujuan) tentunya," lanjutnya.
+        </item>
+        <item>
+            Tim bowling Indonesia merebut gelar juara umum SEA Games 2019 yang berakhir di Starmall EDSA Mandaluyong, Filipina, Minggu (8/12/2019).Tim Merah Putih mengoleksi empat medali emas, dua perak, dan satu perunggu.
+            \n
+            \n
+            \n
+            Billy Muhammad Islam menutup perolehan medali dengan merebut emas nomor masters dalam pertandingan hari terakhir. Billy memastikan merebut emas setelah membukukan poin tertinggi 232.
+            \n
+            \n
+            \n
+            Ryan Lalisang yang mengemas 224 poin meraih perak. Sementara perunggu diraih peboling Singapura, Muh Jaris Goh dengan nilai 191.
+            \n
+            \n
+            \n
+            Namun, di nomor masters putri, Indonesia kurang beruntung. Medali emas diraih Singapura New Hu Fen, perak milik Siti Amiyah Fahirah dari Malaysia dan perunggu direbut peboling Singapura, Shayna NG.
+            \n
+            \n
+            \n
+            Pelatih kepala tim boling Indonesia, David Sitorus, bersyukur dan bangga dengan skuatnya yang meraih gelar juara umum dan melampaui target medali satu emas yang dicanangkan PB PBI.
+            \n
+            \n
+            \n
+            "Bersyukur dengan pencapaian timnas bowling Indonesia di SEA Games 2019. Anak-anak sudah tampil luar biasa. Target satu emas, tetapi hasil di lapangan Tuhan memberikan empat emas, dua perak, dan satu perunggu," tandas David Sitorus.
+        </item>
+    </array>
 </resources>
