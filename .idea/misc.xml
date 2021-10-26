@@ -4,11 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/drawable/bg_home_curve.xml" value="0.1203125" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_berita.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_beritautama.xml" value="0.21927083333333333" />
-        <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_detail.xml" value="0.1" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_splash.xml" value="0.19746376811594202" />
-        <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_splash_screen.xml" value="0.14" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_splash_screen.xml" value="0.17" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/item_main_grid.xml" value="0.10416666666666667" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/list_item_berita.xml" value="0.1" />
       </map>
     </option>
   </component>
