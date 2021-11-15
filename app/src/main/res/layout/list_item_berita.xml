@@ -1,4 +1,5 @@
 <androidx.cardview.widget.CardView
+    android:id="@+id/cvNews"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -6,32 +7,40 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/beritaImage"
+            android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"/>
+            android:src="@drawable/ic_image_list" />
 
         <TextView
             android:id="@+id/title"
             style="@style/TextAppearance.AppCompat.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/image"
             android:padding="8dp"
-            android:layout_alignBottom="@id/beritaImage"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark"
-            android:text="@string/title_placeholder" />
+            android:text="Title"
+            android:textSize="15sp"
+            android:theme="@style/ThemeOverlay.AppCompat" />
 
         <TextView
-            android:id="@+id/subTitle"
+            android:id="@+id/publishedAt"
             style="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/beritaImage"
-            android:padding="8dp"
-            android:text="@string/berita_info_placeholder" />
+            android:layout_below="@id/title"
+            android:padding="3dp"
+            android:text="Time"
+            android:textSize="10sp"
+            android:theme="@style/ThemeOverlay.AppCompat"/>
 
     </RelativeLayout>
+
 </androidx.cardview.widget.CardView>
+
+    <!--</LinearLayout>-->

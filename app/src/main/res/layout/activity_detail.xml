@@ -1,36 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
-    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    <WebView
+        android:id="@+id/read_news"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context="com.example.helloworld.activities.DetailBerita">
-
-        <ImageView
-            android:id="@+id/sportsImageDetail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true" />
-
-        <TextView
-            android:id="@+id/titleDetail"
-            style="@style/TextAppearance.AppCompat.Headline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/sportsImageDetail"
-            android:padding="16dp"
-            android:text="@string/title_placeholder"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark" />
-
-        <TextView
-            android:id="@+id/subTitleDetail"
-            style="@style/TextAppearance.AppCompat.Subhead"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/sportsImageDetail"
-            android:padding="16dp"
-            android:text="@string/detail_placeholder" />
-    </RelativeLayout>
-</ScrollView>
+        android:layout_height="match_parent" />
+</LinearLayout>

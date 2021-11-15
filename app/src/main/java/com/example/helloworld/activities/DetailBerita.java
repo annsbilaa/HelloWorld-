@@ -1,44 +1,73 @@
 package com.example.helloworld.activities;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
-
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.bumptech.glide.Glide;
 import com.example.HelloWorld2.R;
 
-/***
- * Detail Activity that is launched when a list item is clicked.
- * It shows more info on the sport.
- */
+public class DetailBerita extends AppCompatActivity {
 
-public class DetailBerita extends AppCompatActivity{
-    /**
-     * Initializes the activity, filling in the data from the Intent.
-     *
-     * @param savedInstanceState Contains information about the saved state
-     *                           of the activity.
-     */
+    private WebView mWebView;
+
+    String url = "https://www.google.com";
+
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //android theme
         setContentView(R.layout.activity_detail);
 
-        // Initialize the views.
-        TextView sportsTitle = findViewById(R.id.titleDetail);
-        ImageView sportsImage = findViewById(R.id.sportsImageDetail);
-        TextView sportsdetail = findViewById(R.id.subTitleDetail);
+        url =  getIntent().getStringExtra("url");
 
-        // Set the text from the Intent extra.
-        sportsTitle.setText(getIntent().getStringExtra("title"));
+        mWebView = findViewById(R.id.read_news);
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.loadUrl(url);
+        mWebView.setWebViewClient(new WebViewClient() {
 
-        sportsdetail.setText(getIntent().getStringExtra("detail"));
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String newUrl) {
+                view.loadUrl(newUrl);
+                return true;
+            }
 
+            @Override
+            public void onPageStarted(WebView view, String urlStart, Bitmap favicon) {
+                //mProgressBar.setProgress(0);
+                url = urlStart;
+                invalidateOptionsMenu();
 
-        // Load the image using the Glide library and the Intent extra.
-        Glide.with(this).load(getIntent().getIntExtra("image_resource",0))
-                .into(sportsImage);
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String urlPage) {
+                invalidateOptionsMenu();
+            }
+        });
+    }
+
+    //back pressed
+    @Override
+    public void onBackPressed() {
+        if (mWebView.canGoBack()) {
+            mWebView.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    //share news
+    private void shareUrl(String url) {
+        Intent share = new Intent(Intent.ACTION_SEND);
+        share.setType("text/plain");
+        share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+        share.putExtra(Intent.EXTRA_TEXT, url);
+        startActivity(Intent.createChooser(share, "Bagikan ke : "));
     }
 }
+
+
