@@ -14,7 +14,7 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Aboutt Us");
+        actionBar.setTitle("About Us");
 
     }
 }

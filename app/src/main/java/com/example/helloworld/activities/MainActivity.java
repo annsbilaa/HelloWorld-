@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import com.example.HelloWorld2.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
     private CardView cvHead;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         cvHead.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), BeritaUtama.class)));
         cvSports.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Olahraga.class)));
@@ -61,13 +63,16 @@ public class MainActivity extends AppCompatActivity {
         if(id == R.id.profile){
             Intent intent = new Intent(MainActivity.this, Profile.class);
             startActivity(intent);
+            return true;
 
-        }else if (id == R.id.settings){
+        }else
+            if (id == R.id.settings){
             Intent intent = new Intent(MainActivity.this, Settings.class);
             startActivity(intent);
+            return true;
         }
 
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
 }

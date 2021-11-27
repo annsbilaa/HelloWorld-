@@ -1,56 +1,106 @@
 package com.example.helloworld.activities;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
 import android.webkit.WebView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class Bisnis extends AppCompatActivity{
-    WebView webView;
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.example.HelloWorld2.R;
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_berita);
-//
-//        webView = (WebView) findViewById(R.id.webView);
-//        webView.setWebViewClient(new Bisnis.myWebclient());
-//        webView.getSettings().setJavaScriptEnabled(true);
-//        webView.loadUrl("https://www.bisnis.com/");
-//        webView.getSettings().setDomStorageEnabled(true);
-//    }
-//
-//    public class myWebclient extends WebViewClient {
-//        @Override
-//        public void onPageFinished(WebView view, String url) {
-//            super.onPageFinished(view, url);
-//        }
-//        @Override
-//        public void onPageStarted(WebView view, String url, Bitmap favicon) {
-//            super.onPageStarted(view, url, favicon);
-//        }
-//        @Override
-//        public boolean shouldOverrideUrlLoading(WebView wv, String url) {
-//            if(url.startsWith("tel:") || url.startsWith("whatsapp:")) {
-//                Intent intent = new Intent(Intent.ACTION_VIEW);
-//                intent.setData(Uri.parse(url));
-//                startActivity(intent);
-//                return true;
-//            }
-//            return false;
-//        }
-//    }
-//    public void onBackPressed() {
-//
-//        new AlertDialog.Builder(this)
-//                .setMessage("Are you sure you want to exit?")
-//                .setIcon(R.mipmap.ic_launcher)
-//                .setCancelable(false)
-//                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int id) {
-//                        Bisnis.this.finish();
-//                    }
-//                })
-//                .setNegativeButton("No", null)
-//                .show();
-//    }
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Bisnis extends AppCompatActivity implements NewsAdapter.onSelectData {
+
+    RecyclerView rvHeadNews;
+    NewsAdapter newsAdapter;
+    List<ModelNews> modelNews = new ArrayList<>();
+    ProgressBar mProgressBar;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_berita);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Bisnis");
+
+        mProgressBar = findViewById(R.id.progress_bar);
+        mProgressBar.setMax(100);
+
+        rvHeadNews = findViewById(R.id.recyclerView);
+        rvHeadNews.setHasFixedSize(true);
+        rvHeadNews.setLayoutManager(new LinearLayoutManager(this));
+        mProgressBar.setProgress(0);
+        loadJSON();
+    }
+
+    private void loadJSON() {
+        mProgressBar.setProgress(0);
+        AndroidNetworking.get(NewsApi.GET_CATEGORY_BUSINESS)
+                .setPriority(Priority.HIGH)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            mProgressBar.setVisibility(View.GONE);
+                            JSONArray playerArray = response.getJSONArray("articles");
+                            for (int i = 0; i < playerArray.length(); i++) {
+                                JSONObject temp = playerArray.getJSONObject(i);
+                                ModelNews dataApi = new ModelNews();
+                                dataApi.setTitle(temp.getString("title"));
+                                dataApi.setUrl(temp.getString("url"));
+                                dataApi.setPublishedAt(temp.getString("publishedAt"));
+                                dataApi.setUrlToImage(temp.getString("urlToImage"));
+
+                                modelNews.add(dataApi);
+                                showNews();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(Bisnis.this, "Gagal menampilkan data!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+                        Toast.makeText(Bisnis.this, "Tidak ada jaringan internet!", Toast.LENGTH_SHORT).show();
+                        mProgressBar.setVisibility(View.GONE);
+                    }
+                });
+    }
+
+    private void showNews() {
+        newsAdapter = new NewsAdapter(Bisnis.this, modelNews, this);
+        rvHeadNews.setAdapter(newsAdapter);
+    }
+
+    @Override
+    public void onSelected(ModelNews mdlNews) {
+        startActivity(new Intent(Bisnis.this, DetailBerita.class).putExtra("url", mdlNews.getUrl()));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.search_menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
 }
