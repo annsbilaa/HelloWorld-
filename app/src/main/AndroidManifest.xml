@@ -47,6 +47,11 @@
             android:name="com.example.helloworld.activities.Profile" />
         <activity
             android:name="com.example.helloworld.activities.Settings" />
+        <receiver
+            android:name="com.example.helloworld.activities.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true">
+        </receiver>
     </application>
 
 </manifest>
