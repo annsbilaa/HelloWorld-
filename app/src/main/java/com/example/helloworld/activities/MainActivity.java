@@ -7,6 +7,7 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
@@ -53,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
         if(id == R.id.profile){
@@ -65,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
 
-        }else
-            if (id == R.id.settings){
+        }
+            else if (id == R.id.settings){
             Intent intent = new Intent(MainActivity.this, Settings.class);
             startActivity(intent);
             return true;
