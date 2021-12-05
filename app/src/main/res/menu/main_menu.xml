@@ -8,12 +8,14 @@
         android:id="@+id/profile"
         android:title="Profile"
         android:icon="@drawable/ic_profile"
+        android:orderInCategory="10"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/settings"
         android:title="Setting"
         android:icon="@drawable/ic_settings"
+        android:orderInCategory="20"
         app:showAsAction="always" />
 
 </menu>
