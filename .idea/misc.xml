@@ -3,24 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/HelloWorld-/app/src/main/res/layout/activity_profile.xml" value="0.5" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/drawable-anydpi/ic_reset.xml" value="0.11197916666666667" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/drawable/bg_home_curve.xml" value="0.1203125" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_berita.xml" value="0.1" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_beritautama.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_profile.xml" value="0.25" />
-        <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_settings.xml" value="0.1" />
-        <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_splash.xml" value="0.19746376811594202" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/activity_splash_screen.xml" value="0.17" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/item_main_grid.xml" value="0.10416666666666667" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/layout/list_item_berita.xml" value="0.1" />
-        <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/menu/main_menu.xml" value="0.1" />
-        <entry key="..\:/Users/ACER/AndroidStudioProjects/HelloWorld2/app/src/main/res/menu/search_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
