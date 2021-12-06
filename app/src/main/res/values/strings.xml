@@ -6,7 +6,7 @@
     <string name="news_placeholder">News</string>
     <string name="berita_info_placeholder">Here is some news</string>
     <string name="detail_placeholder"> Here is some detail </string>
-    <string name="notification_text">You should stand up and walk around now!</string>
+    <string name="notification_text">Ayo cek berita terkini sekarang!</string>
     <string name="notification_title">Alarm Berita</string>
     <string name="alarm_on_toast">Berita Alarm On!</string>
     <string name="alarm_off_toast">Berita alarm Off!</string>
