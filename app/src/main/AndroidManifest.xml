@@ -38,8 +38,8 @@
             android:screenOrientation="locked"
             android:windowSoftInputMode="stateHidden"/>
         <activity
-                android:name="com.example.helloworld.activities.Bisnis"
-                android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"/>
+            android:name="com.example.helloworld.activities.Bisnis"
+            android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name="com.example.helloworld.activities.Olahraga"
             android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"/>
@@ -47,8 +47,8 @@
             android:name="com.example.helloworld.activities.Teknologi"
             android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"/>
         <activity
-        android:name="com.example.helloworld.activities.Kesehatan"
-        android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"/>
+            android:name="com.example.helloworld.activities.Kesehatan"
+            android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name="com.example.helloworld.activities.Hiburan"
             android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"/>

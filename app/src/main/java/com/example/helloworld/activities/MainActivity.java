@@ -50,26 +50,27 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
+
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if(id == R.id.profile){
-            Intent intent = new Intent(MainActivity.this, Profile.class);
-            startActivity(intent);
-            return true;
+        switch (item.getItemId()) {
+            case R.id.profile:
+                startActivity(new Intent(getApplicationContext(), Profile.class));
+                overridePendingTransition(0, 0);
+                return true;
+            case R.id.settings:
+                startActivity(new Intent(getApplicationContext(), Settings.class));
+                overridePendingTransition(0, 0);
+                ;
+                return true;
 
-        }else
-            if (id == R.id.settings){
-            Intent intent = new Intent(MainActivity.this, Settings.class);
-            startActivity(intent);
-            return true;
+
         }
-
         return super.onOptionsItemSelected(item);
     }
-
 }

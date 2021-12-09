@@ -1,46 +1,80 @@
-<androidx.cardview.widget.CardView
-    android:id="@+id/cvNews"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    android:layout_height="wrap_content">
 
-    <RelativeLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
-        android:orientation="horizontal">
+        android:layout_margin="10dp"
+        android:id="@+id/cardView"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="6dp">
 
-        <ImageView
-            android:id="@+id/image"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_image_list" />
+            android:layout_height="200dp">
 
-        <TextView
-            android:id="@+id/title"
-            style="@style/TextAppearance.AppCompat.Headline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/image"
-            android:padding="8dp"
-            android:text="Title"
-            android:textSize="15sp"
-            android:theme="@style/ThemeOverlay.AppCompat" />
 
-        <TextView
-            android:id="@+id/publishedAt"
-            style="@style/TextAppearance.AppCompat.Subhead"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            android:padding="3dp"
-            android:text="Time"
-            android:textSize="10sp"
-            android:theme="@style/ThemeOverlay.AppCompat"/>
+            <ProgressBar
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:id="@+id/loader"/>
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/img"
+                android:scaleType="centerCrop" />
 
-</androidx.cardview.widget.CardView>
 
-    <!--</LinearLayout>-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TITLE"
+                android:padding="10dp"
+                android:textSize="20dp"
+                android:fontFamily="@font/g_bold"
+                android:textColor="@color/white"
+                android:id="@+id/tvTitle"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Source"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/g_light"
+                    android:textColor="@color/white"
+                    android:id="@+id/tvSource"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="5 hour ago"
+                    android:gravity="right"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/g_light"
+                    android:textColor="@color/white"
+                    android:id="@+id/tvDate"/>
+            </LinearLayout>
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

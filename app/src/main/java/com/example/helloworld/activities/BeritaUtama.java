@@ -1,106 +1,155 @@
 package com.example.helloworld.activities;
 
-import android.content.Intent;
+import android.app.Dialog;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
-import android.widget.ProgressBar;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.androidnetworking.AndroidNetworking;
-import com.androidnetworking.common.Priority;
-import com.androidnetworking.error.ANError;
-import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.HelloWorld2.R;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.helloworld.activities.API.ApiClient;
+import com.example.helloworld.activities.Model.Articles;
+import com.example.helloworld.activities.Model.Headlines;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-public class BeritaUtama extends AppCompatActivity implements NewsAdapter.onSelectData {
-
-    RecyclerView rvHeadNews;
-    NewsAdapter newsAdapter;
-    List<ModelNews> modelNews = new ArrayList<>();
-    ProgressBar mProgressBar;
-
+public class BeritaUtama extends AppCompatActivity {
+    MeowBottomNavigation bottomNavigation;
+    RecyclerView recyclerView;
+    SwipeRefreshLayout swipeRefreshLayout;
+    EditText etQuery;
+    Button btnSearch,btnAboutUs;
+    Dialog dialog;
+    final String API_KEY = "06a2a4a7a31640ecae735c39d1ee8edb";
+    Adapter adapter;
+    List<Articles>  articles = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_berita);
+//        getSupportActionBar().hide();
+        swipeRefreshLayout = findViewById(R.id.swipeRefresh);
+        recyclerView = findViewById(R.id.recyclerView);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Berita Utama");
 
-        mProgressBar = findViewById(R.id.progress_bar);
-        mProgressBar.setMax(100);
+        etQuery = findViewById(R.id.etQuery);
+        btnSearch = findViewById(R.id.btnSearch);
+        btnAboutUs = findViewById(R.id.aboutUs);
+        dialog = new Dialog(BeritaUtama.this);
 
-        rvHeadNews = findViewById(R.id.recyclerView);
-        rvHeadNews.setHasFixedSize(true);
-        rvHeadNews.setLayoutManager(new LinearLayoutManager(this));
-        mProgressBar.setProgress(0);
-        loadJSON();
-    }
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        final String country = getCountry();
 
-    private void loadJSON() {
-        mProgressBar.setProgress(0);
-        AndroidNetworking.get(NewsApi.GET_TOP_HEADLINES)
-                .setPriority(Priority.HIGH)
-                .build()
-                .getAsJSONObject(new JSONObjectRequestListener() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            mProgressBar.setVisibility(View.GONE);
-                            JSONArray playerArray = response.getJSONArray("articles");
-                            for (int i = 0; i < playerArray.length(); i++) {
-                                JSONObject temp = playerArray.getJSONObject(i);
-                                ModelNews dataApi = new ModelNews();
-                                dataApi.setTitle(temp.getString("title"));
-                                dataApi.setUrl(temp.getString("url"));
-                                dataApi.setPublishedAt(temp.getString("publishedAt"));
-                                dataApi.setUrlToImage(temp.getString("urlToImage"));
 
-                                modelNews.add(dataApi);
-                                showNews();
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            Toast.makeText(BeritaUtama.this, "Gagal menampilkan data!", Toast.LENGTH_SHORT).show();
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                retrieveJson("",country,API_KEY);
+            }
+        });
+        retrieveJson("",country,API_KEY);
+
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!etQuery.getText().toString().equals("")){
+                    swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                        @Override
+                        public void onRefresh() {
+                            retrieveJson(etQuery.getText().toString(),country,API_KEY);
                         }
-                    }
+                    });
+                    retrieveJson(etQuery.getText().toString(),country,API_KEY);
+                }else{
+                    swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                        @Override
+                        public void onRefresh() {
+                            retrieveJson("",country,API_KEY);
+                        }
+                    });
+                    retrieveJson("",country,API_KEY);
+                }
+            }
+        });
 
-                    @Override
-                    public void onError(ANError anError) {
-                        Toast.makeText(BeritaUtama.this, "Tidak ada jaringan internet!", Toast.LENGTH_SHORT).show();
-                        mProgressBar.setVisibility(View.GONE);
-                    }
-                });
+
+
+        btnAboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog();
+            }
+        });
+
+
+
+
+
+
     }
 
-    private void showNews() {
-        newsAdapter = new NewsAdapter(BeritaUtama.this, modelNews, this);
-        rvHeadNews.setAdapter(newsAdapter);
+    public void retrieveJson(String query ,String country, String apiKey){
+
+
+        swipeRefreshLayout.setRefreshing(true);
+        Call<Headlines> call;
+        if (!etQuery.getText().toString().equals("")){
+            call= ApiClient.getInstance().getApi().getSpecificData(query,apiKey);
+        }else{
+            call= ApiClient.getInstance().getApi().getHeadlines(country,apiKey);
+        }
+
+        call.enqueue(new Callback<Headlines>() {
+            @Override
+            public void onResponse(Call<Headlines> call, Response<Headlines> response) {
+                if (response.isSuccessful() && response.body().getArticles() != null){
+                    swipeRefreshLayout.setRefreshing(false);
+                    articles.clear();
+                    articles = response.body().getArticles();
+                    adapter = new Adapter(BeritaUtama.this,articles);
+                    recyclerView.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Headlines> call, Throwable t) {
+                swipeRefreshLayout.setRefreshing(false);
+                Toast.makeText(BeritaUtama.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-    @Override
-    public void onSelected(ModelNews mdlNews) {
-        startActivity(new Intent(BeritaUtama.this, DetailBerita.class).putExtra("url", mdlNews.getUrl()));
+    public String getCountry(){
+        Locale locale = Locale.getDefault();
+        String country = locale.getCountry();
+        return country.toLowerCase();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.search_menu, menu);
+    public void showDialog(){
+        Button btnClose;
+        dialog.setContentView(R.layout.about_us_pop_up);
+        dialog.show();
+        btnClose = dialog.findViewById(R.id.close);
 
-        return super.onCreateOptionsMenu(menu);
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
     }
 }
