@@ -30,19 +30,28 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name="com.example.helloworld.activities.BeritaUtama"
-            android:exported="true" />
-        <activity android:name="com.example.helloworld.activities.DetailBerita"
-            android:exported="true"/>
+            android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"
+            android:exported="true"
+            android:label="Jangs Web Berita"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.example.helloworld.activities.Detailed"
+            android:screenOrientation="locked"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
-            android:name="com.example.helloworld.activities.Olahraga" />
+                android:name="com.example.helloworld.activities.Bisnis"
+                android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"/>
         <activity
-            android:name="com.example.helloworld.activities.Teknologi" />
+            android:name="com.example.helloworld.activities.Olahraga"
+            android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"/>
         <activity
-            android:name="com.example.helloworld.activities.Bisnis" />
+            android:name="com.example.helloworld.activities.Teknologi"
+            android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"/>
         <activity
-            android:name="com.example.helloworld.activities.Kesehatan" />
+        android:name="com.example.helloworld.activities.Kesehatan"
+        android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"/>
         <activity
-            android:name="com.example.helloworld.activities.Hiburan" />
+            android:name="com.example.helloworld.activities.Hiburan"
+            android:screenOrientation="locked" android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name="com.example.helloworld.activities.Profile" />
         <activity
